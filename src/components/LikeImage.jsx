@@ -1,16 +1,9 @@
-import React, { useState } from 'react'
-
-export default function LikeImage() {
-
-  const [likeImageCounter, setLikeImageCounter] = useState(0);
-
-  const handleLikeImageCount = ()=>{
-    setLikeImageCounter(likeImageCounter+1);
-  }
-
+import Hoc from "./Hoc"
+function LikeImage(props) {
   return (
     <div>
-      <button onClick={handleLikeImageCount}>Like Image {likeImageCounter}</button>
+      <button onClick={props.click}>Like Image {props.text}</button>
     </div>
   )
 }
+export default Hoc(LikeImage)
