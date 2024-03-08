@@ -1,11 +1,13 @@
-import { useState } from "react";
-function Hoc(Component){
- return function Hoc() {
-    const [count,setcount]=useState(0)
-    const helper=()=>{
-        setcount(count+1)
-    }
-    return <Component text={count} click={helper}/>
-} 
+import React, { useState } from "react";
+
+function Hoc({ render }) {
+  const [count, setCount] = useState(0);
+
+  const helper = () => {
+    setCount(count + 1);
+  };
+
+  return render(count, helper);
 }
+
 export default Hoc;

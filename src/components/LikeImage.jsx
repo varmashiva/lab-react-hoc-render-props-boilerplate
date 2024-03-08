@@ -1,9 +1,16 @@
-import Hoc from "./Hoc"
+import React from "react";
+import Hoc from "./Hoc";
+
 function LikeImage(props) {
   return (
     <div>
-      <button onClick={props.click}>Like Image {props.text}</button>
+      <Hoc
+        render={(count, click) => (
+          <button onClick={click}>Like Image {count}</button>
+        )}
+      />
     </div>
-  )
+  );
 }
-export default Hoc(LikeImage)
+
+export default LikeImage;
